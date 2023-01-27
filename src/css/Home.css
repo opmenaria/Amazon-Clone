@@ -1,0 +1,20 @@
+
+.home{
+    display: block;
+    max-width:150rem;
+    position:relative;
+    background-color: rgb(211, 211, 211);
+    height:100%;
+    margin: 0 auto;
+}
+.baner-carousel{
+    margin-bottom: -22rem;
+}
+.home .baners img{
+    height: stretch;
+    cursor: pointer;
+    width: 100%;
+    mask-image: linear-gradient(to bottom,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0 ))
+}

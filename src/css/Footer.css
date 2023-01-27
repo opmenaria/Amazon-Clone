@@ -1,0 +1,26 @@
+.footer{
+    display:flex;
+    bottom:0;
+    width:100%;
+    align-items: center;
+    position:relative;
+    justify-content: center;
+    color: white;
+    z-index: -5;
+}
+@media (max-width:750px){
+    .footer{
+        height: auto;
+    }
+        .privacy{
+        padding: 0 2rem ;
+        font-size: large;
+    }
+}
+.privacy{
+    background: rgb(12, 1, 40);
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+    height:fit-content;
+}
