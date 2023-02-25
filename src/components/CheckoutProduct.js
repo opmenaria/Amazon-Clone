@@ -3,10 +3,10 @@ import React from 'react'
 import { useStateValue } from './StateProvider';
 
 export default function CheckoutProduct({ id, title, src, price, rating }) {
-    const [{ cart }, dispatch] = useStateValue()
-    const removeFromBasket = () => {
+    const [, dispatch] = useStateValue()
+    const removeFromCart = () => {
         dispatch({
-            type: 'REMOVE-FROM-CART',
+            type: "REMOVE_FROM_CART",
             id: id
         })
     }
@@ -21,13 +21,13 @@ export default function CheckoutProduct({ id, title, src, price, rating }) {
                         <div className="product-rating">
                             {Array(rating)
                                 .fill()
-                                .map((_) => (
+                                .map((_, i) => (
                                     <img key={faker.datatype.uuid()} src="https://iconarchive.com/download/i42772/oxygen-icons.org/oxygen/Actions-rating.ico" alt="star" />
                                 ))}
                         </div>
                         <label>Add Qty: </label>
                         <select tabIndex={0} name='quantity'>
-                            <option>0 (Delete)</option>
+                            <option onClick={removeFromCart}>0 (Delete)</option>
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -41,7 +41,7 @@ export default function CheckoutProduct({ id, title, src, price, rating }) {
                         </select>
                         <br />
 
-                        <button onClick={removeFromBasket}>Remove Item</button>
+                        <button onClick={removeFromCart}>Remove Item</button>
                     </div>
                     <div className="cart-product-price">
                         <h3>

@@ -8,7 +8,6 @@
 } 
 .login >h3{
     margin: 2rem 0 1rem 0;
-    opacity: 70%;
 }
 
 .nav-logo-login{
@@ -33,7 +32,13 @@
     border: 0;
     color: rgb(14, 119, 247);
 }
-
+.login-setup h6{
+    cursor: pointer;
+}
+.login-setup h6:hover{
+    color: rgb(20, 118, 238);
+    text-decoration: underline;
+}
 #password{
     width: stretch;
     display:inline-flex;

@@ -6,12 +6,6 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-// export default function Product() {
-//     return (
-//         <div>
-//             import * as React from 'react';
-
-
 export default function MediaCard() {
     return (
         <Card sx={{ maxWidth: 345 }}>

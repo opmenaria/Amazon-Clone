@@ -1,28 +1,26 @@
 export const initialState = {
     cart: [],
-    user: [
-        { email: 'menariaOm899@gmail.com' }
-    ]
+    user: null
 }
 
-export const getCartTotal = (cart) =>
-    cart?.reduce((amount, item) => item.price + amount, 0);
-
+export const getCartTotal = (cart) => {
+    const a = cart?.reduce((amount, item) => item.price + amount, 0);
+    return a
+}
 const reducer = (state, action) => {
-    // console.log(action);
     switch (action.type) {
-        case 'SET-USER':
+        case "SET_USER":
             return {
                 ...state,
                 user: action.user
             }
-        case 'ADD-TO-CART':
+        case "ADD_TO_CART":
             return {
                 ...state,
                 cart: [...state.cart, action.item]
             };
 
-        case 'REMOVE-FROM-CART':
+        case "REMOVE_FROM_CART":
             let newCart = [...state.cart]
             const index = state.cart.findIndex((cartItem) => cartItem.id === action.id)
             if (index >= 0) {

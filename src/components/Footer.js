@@ -9,7 +9,7 @@ export default function Footer() {
                     Privacy Notice
                     Interest-Based Ads
                 </h3>
-                <h3> © 1996-2023, Amazon.com, Inc. or its affiliates
+                <h3> ©2023, Amazon Clone, Made by <strong>Om Prakash Menaria</strong>
                 </h3>
             </div>
         </div>

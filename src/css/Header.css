@@ -3,16 +3,11 @@
   padding: 0;
 }
 @media (max-width:750px) {  /*px only, bcz browser doesnt know rem */
-#root{
-/* width: 100%; */
-}
+
   .app{
     width:fit-content;
     display: flex;
 }
-.nav-location > h5 {
-    /* display: none; */
-  }
   .header{
     width:133rem;
     padding: 1rem;
@@ -38,26 +33,17 @@ html{
   /*[scaling 1rem =10px (default 1rem=16px)] NOTE-Never use (px)
   font-size: 10px; */
   font-size: 62.5%;
-  /* width: 100%; */
-}
-#root{
-  /* display: flex;
-  width: 100%; */
-}
-.body{
-  /* display: flex; */
 }
 .app{
   display:flex;
   flex-direction: column;
   margin: 0 auto;
-  /* height:170rem; */
   
 }
 .header{
   top: 0;
   z-index: 10;
-  /* position: sticky;  */
+  position: sticky; 
   display:flex;
   background: rgb(21, 21, 21);
   align-items: center;

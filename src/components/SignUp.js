@@ -3,67 +3,50 @@ import { Link, useNavigate } from 'react-router-dom'
 import '../css/Login.css'
 import { auth } from '../firebase'
 
-export default function LogIn() {
+export default function SignUp() {
     const navigate = useNavigate()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    // const reload = () => {
-    //     window.location.reload(false)
-    // }
-    const login = (event) => {
-        event.preventDefault();
+    const register = (event) => {
+        event.preventDefault()
         // Firebase Sign In Functionality
-        auth.signInWithEmailAndPassword(email, password)
+        auth.createUserWithEmailAndPassword(email, password)
+            // console.log(email);
+            // console.log(password);
             .then((auth) => {
                 if (auth) {
-                    navigate('/') //will redirect to the home page
+                    navigate('/')
                     // window.location.reload(false) //window.location.reload method
                 }
             })
-            .catch((e) => alert(e.message))
+            .catch((err) => alert(err.message))
     }
-    // const register = () => {
-    //     auth.createUserWithEmailAndPassword(email, password)
-    //         .then((auth) => {
-    //             if (auth) {
-    //                 history.push('/')
-    //             }
-    //         })
-    //         .catch((e) => alert(e.message))
-    // }
     return (
         <div className='login'>
             <Link to="/">
                 <img className="nav-logo-login" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png" alt="Logo"></img>
             </Link>
             <div className="login-setup">
-                <h2><b>Log in</b></h2><br />
-
+                <h2><b>Sign Up</b></h2><br />
                 <form className="login-form">
                     <h4>Email or mobile phone number </h4>
                     <input value={email} onChange={e => setEmail(e.target.value)} type="email" placeholder='@email' />
                     <div id='password'>
                         <h4>Password </h4>
-                        <Link className='forgot-link'> <h5>Forgot Password </h5></Link>
                     </div><br />
                     <input value={password} onChange={e => setPassword(e.target.value)} type='password' /><br /><br />
-                    <button onClick={login}><h3>Log in</h3> </button>
-                    <label>
-                        <input type="checkbox" />
-                        <h5>Keep me signed in.</h5>
-                    </label>
+                    <button onClick={register} type="submit"><h3>Create Account</h3> </button>
                 </form>
-                <h6 className='terms'>By continuing, you agree to Amazon's Conditions of Use and Privacy Notice.</h6><br />
+                <h6>By continuing, you agree to Amazon's Conditions of Use and Privacy Notice.</h6><br />
                 <select>
                     <option>Need help?</option>
-                    <option>Forgot Password</option>
                     <option>Other issues with Sign-In</option>
                 </select>
             </div>
-            <h3>New to Amazon?</h3>
-            <div className="to-signin"><Link to="/signup">
-                <button><h3>Create new Amazon account</h3> </button>
+            <h3>Already on Amazon?</h3>
+            <div className="to-signin"><Link to="/login">
+                <button><h3>Log in to Amazon account</h3> </button>
             </Link>
             </div>
         </div>

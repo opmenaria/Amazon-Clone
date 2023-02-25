@@ -1,0 +1,8 @@
+.orders{
+    margin: 2rem auto;
+    width: 70%;
+    /* border: 4px solid red; */
+    display: flex;
+    flex-direction: column;
+    min-height: 60rem;
+}

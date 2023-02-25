@@ -4,11 +4,11 @@ import "../css/Product.css"
 import { useStateValue } from './StateProvider'
 
 export default function Product({ id, src, title, price, rating }) {
-    const [{ cart }, dispatch] = useStateValue();
+    const [, dispatch] = useStateValue();
 
     const handleAddTo = () => {
         dispatch({
-            type: 'ADD-TO-CART',
+            type: "ADD_TO_CART",
             item: {
                 id, src, title, price, rating
             }
