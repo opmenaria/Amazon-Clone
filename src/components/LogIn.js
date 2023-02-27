@@ -34,7 +34,7 @@ export default function LogIn() {
     // }
     return (
         <div className='login'>
-            <Link to="/">
+            <Link to="/Amazon-Clone">
                 <img className="nav-logo-login" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png" alt="Logo"></img>
             </Link>
             <div className="login-setup">

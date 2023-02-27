@@ -7,6 +7,8 @@ export default function Product({ id, src, title, price, rating }) {
     const [, dispatch] = useStateValue();
 
     const handleAddTo = () => {
+        localStorage.setItem(id, JSON.stringify({ id, src, title, price, rating }))
+        // console.log(id);
         dispatch({
             type: "ADD_TO_CART",
             item: {

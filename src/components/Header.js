@@ -17,7 +17,7 @@ export default function Header() {
     }
     return (
         <nav className="header">
-            <Link to="/">
+            <Link to="/Amazon-Clone">
                 <img className="nav-logo" src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="Logo"></img>
             </Link>
             <Link className="nav-location">

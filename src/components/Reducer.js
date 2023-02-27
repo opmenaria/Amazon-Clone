@@ -8,6 +8,7 @@ export const getCartTotal = (cart) => {
     return a
 }
 const reducer = (state, action) => {
+    localStorage.setItem("state", JSON.stringify(state.cart))
     switch (action.type) {
         case "SET_USER":
             return {

@@ -7,6 +7,8 @@ import Subtotal from './Subtotal'
 
 export default function Checkout() {
     const [{ cart, }] = useStateValue()
+    const cartList = JSON.parse(localStorage.state)
+    console.log(cartList);
     return (
         <>
             <div className='checkout-box'>
