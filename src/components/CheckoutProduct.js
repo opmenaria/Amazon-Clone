@@ -5,7 +5,6 @@ import { useStateValue } from './StateProvider';
 export default function CheckoutProduct({ id, title, src, price, rating }) {
     const [, dispatch] = useStateValue()
     const removeFromCart = () => {
-        localStorage.removeItem(id)
         dispatch({
             type: "REMOVE_FROM_CART",
             id: id
