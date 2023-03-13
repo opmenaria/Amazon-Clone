@@ -1,4 +1,4 @@
-Hosting URL: https://app-b73fa.web.app
+Hosting URL: https://opmenaria.github.io/Amazon-Clone/
 React router html css javascript react firebase 
 
 # Getting Started with Create React App

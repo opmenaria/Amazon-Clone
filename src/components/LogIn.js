@@ -30,8 +30,13 @@ export default function LogIn() {
     //         .catch((e) => alert(e.message))
     // }
     return (
+<<<<<<< HEAD
         <div className='login '>
             <Link to="/">
+=======
+        <div className='login'>
+            <Link to="/Amazon-Clone">
+>>>>>>> a37f57d265a94d2d7ba6ead296a8dcbd985f9572
                 <img className="nav-logo-login" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png" alt="Logo"></img>
             </Link>
             <div className="login-setup">

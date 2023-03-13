@@ -37,7 +37,7 @@ function App() {
     <div className="app">
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/Amazon-Clone" element={<Home />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/orders" element={<Orders />} />
