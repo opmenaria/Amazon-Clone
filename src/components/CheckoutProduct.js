@@ -1,10 +1,10 @@
-import { faker } from '@faker-js/faker'
 import React from 'react'
-import { useStateValue } from './StateProvider';
+import { useDispatch } from 'react-redux';
 
 export default function CheckoutProduct({ id, title, src, price, rating }) {
-    const [, dispatch] = useStateValue()
+    const dispatch = useDispatch()
     const removeFromCart = () => {
+        localStorage.removeItem(id)
         dispatch({
             type: "REMOVE_FROM_CART",
             id: id
@@ -19,11 +19,7 @@ export default function CheckoutProduct({ id, title, src, price, rating }) {
                     <div className="item-info">
                         <h4>{title}</h4>
                         <div className="product-rating">
-                            {Array(rating)
-                                .fill()
-                                .map((_, i) => (
-                                    <img key={faker.datatype.uuid()} src="https://iconarchive.com/download/i42772/oxygen-icons.org/oxygen/Actions-rating.ico" alt="star" />
-                                ))}
+                            <h3>&#11088;{rating}</h3>
                         </div>
                         <label>Add Qty: </label>
                         <select tabIndex={0} name='quantity'>

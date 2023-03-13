@@ -12,8 +12,6 @@ export default function SignUp() {
         event.preventDefault()
         // Firebase Sign In Functionality
         auth.createUserWithEmailAndPassword(email, password)
-            // console.log(email);
-            // console.log(password);
             .then((auth) => {
                 if (auth) {
                     navigate('/')

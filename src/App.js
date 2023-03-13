@@ -4,15 +4,17 @@ import Home from './components/Home';
 import Checkout from './components/Checkout';
 import LogIn from './components/LogIn';
 import Header from './components/Header'
-import { useStateValue } from "./components/StateProvider";
+// import { useStateValue } from "./components/StateProvider";
 import { auth } from "./firebase";
 import Footer from "./components/Footer";
 import SignUp from "./components/SignUp";
 import Orders from "./components/Orders";
 import Payment from "./components/Payment";
+import { useDispatch } from "react-redux";
 
 function App() {
-  const [, dispatch] = useStateValue()
+  const dispatch = useDispatch()
+
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
       if (authUser) {

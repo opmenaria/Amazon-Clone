@@ -1,12 +1,12 @@
+import { faker } from '@faker-js/faker'
 import React from 'react'
+import { useSelector } from 'react-redux'
 import "../css/Checkout.css"
 import CheckoutProduct from './CheckoutProduct'
-import { useStateValue } from './StateProvider'
 import Subtotal from './Subtotal'
-// import { faker } from '@faker-js/faker'
 
 export default function Checkout() {
-    const [{ cart, }] = useStateValue()
+    const cart = useSelector((state) => state.cart);
     return (
         <>
             <div className='checkout-box'>
@@ -18,7 +18,7 @@ export default function Checkout() {
                             cart.map((item) =>
                                 <CheckoutProduct
                                     id={item.id}
-                                    key={item.id}
+                                    key={faker.datatype.uuid()}
                                     title={item.title}
                                     src={item.src}
                                     price={item.price}

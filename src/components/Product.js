@@ -1,12 +1,19 @@
-import { faker } from '@faker-js/faker';
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import "../css/Product.css"
-import { useStateValue } from './StateProvider'
 
-export default function Product({ id, src, title, price, rating }) {
-    const [, dispatch] = useStateValue();
+export default function Product({ jsonVal }) {
+    const id = jsonVal.id
+    const src = jsonVal.image
+    const title = jsonVal.title
+    const price = jsonVal.price
+    const rating = jsonVal.rating.rate
+
+    const cart = useSelector((state) => state.cart);
+    const dispatch = useDispatch();
 
     const handleAddTo = () => {
+        localStorage.setItem("locState", JSON.stringify(cart))
         dispatch({
             type: "ADD_TO_CART",
             item: {
@@ -20,11 +27,7 @@ export default function Product({ id, src, title, price, rating }) {
             <div className="product-info">
                 <h3>{title}</h3>
                 <div className="product-rating">
-                    {Array(rating)
-                        .fill()
-                        .map((_) => (
-                            <img key={faker.datatype.uuid()} src="https://iconarchive.com/download/i42772/oxygen-icons.org/oxygen/Actions-rating.ico" alt="star" />
-                        ))}
+                    <h3>&#11088;{rating}</h3>
                 </div>
                 <div className="product-price">
                     <h3>$ </h3>

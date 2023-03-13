@@ -8,9 +8,6 @@ export default function LogIn() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    // const reload = () => {
-    //     window.location.reload(false)
-    // }
     const login = (event) => {
         event.preventDefault();
         // Firebase Sign In Functionality
@@ -33,7 +30,7 @@ export default function LogIn() {
     //         .catch((e) => alert(e.message))
     // }
     return (
-        <div className='login'>
+        <div className='login '>
             <Link to="/">
                 <img className="nav-logo-login" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png" alt="Logo"></img>
             </Link>
@@ -54,12 +51,14 @@ export default function LogIn() {
                         <h5>Keep me signed in.</h5>
                     </label>
                 </form>
-                <h6 className='terms'>By continuing, you agree to Amazon's Conditions of Use and Privacy Notice.</h6><br />
-                <select>
-                    <option>Need help?</option>
-                    <option>Forgot Password</option>
-                    <option>Other issues with Sign-In</option>
-                </select>
+                <h5 className='terms'>By continuing, you agree to Amazon's Conditions of Use and Privacy Notice.</h5><br />
+                <h4>
+                    <select>
+                        <option> Need help?</option>
+                        <option> Forgot Password</option>
+                        <option> Other issues with Sign-In</option>
+                    </select>
+                </h4>
             </div>
             <h3>New to Amazon?</h3>
             <div className="to-signin"><Link to="/signup">

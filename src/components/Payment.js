@@ -1,12 +1,14 @@
 import React from 'react'
-import { useStateValue } from './StateProvider'
 import CheckoutProduct from './CheckoutProduct'
 import "../css/Payment.css"
 import { getCartTotal } from './Reducer'
 import { Link } from 'react-router-dom'
 import CurrencyFormat from 'react-currency-format'
+import { useSelector } from 'react-redux'
+import { faker } from '@faker-js/faker'
 export default function Payment() {
-    const [{ cart, user },] = useStateValue()
+    const cart = useSelector((state) => state.cart);
+    const user = useSelector((state) => state.user);
 
     return (
         <div className="payment">
@@ -32,7 +34,7 @@ export default function Payment() {
                             cart.map((item) =>
                                 <CheckoutProduct
                                     id={item.id}
-                                    key={item.id}
+                                    key={faker.datatype.uuid()}
                                     title={item.title}
                                     src={item.src}
                                     price={item.price}

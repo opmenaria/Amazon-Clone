@@ -15,6 +15,7 @@
     height: 4rem;
 }
 .login-setup{
+    box-shadow:.2rem .2rem .5rem rgb(202, 202, 202) ;
     font-size: large;
     background: rgb(255, 255, 255);
     padding: 2rem;

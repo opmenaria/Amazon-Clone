@@ -1,19 +1,27 @@
+
 export const initialState = {
     cart: [],
-    user: null
+    user: null,
+    apiData: null
 }
 
 export const getCartTotal = (cart) => {
     const a = cart?.reduce((amount, item) => item.price + amount, 0);
     return a
 }
-const reducer = (state, action) => {
+const reducer = (state = initialState, action) => {
     switch (action.type) {
+        case "FETCH_API":
+            return {
+                ...state,
+                apiData: action.apiData
+            }
         case "SET_USER":
             return {
                 ...state,
                 user: action.user
             }
+
         case "ADD_TO_CART":
             return {
                 ...state,

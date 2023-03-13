@@ -1,20 +1,58 @@
 
 .home{
     display: block;
-    max-width:150rem;
+    width:auto;
     position:relative;
-    background-color: rgb(211, 211, 211);
     height:100%;
     margin: 0 auto;
 }
-.baner-carousel{
+#carouselExampleAutoplaying{
     margin-bottom: -22rem;
 }
-.home .baners img{
-    height: stretch;
+.carousel-item img{
     cursor: pointer;
-    width: 100%;
     mask-image: linear-gradient(to bottom,
     rgba(0, 0, 0, 1),
     rgba(0, 0, 0, 0 ))
+}
+.product-body{
+    /* display: flex; */
+    width: 96%;
+    margin: 0 auto;
+}
+.product-div{
+    padding: 1rem;
+    width: 100%;
+    position:relative;
+    overflow: hidden;
+    background:  rgba(194, 193, 193, 0.375);
+}
+.category-name{
+    width: 100%;
+    display: flex;
+    background: #000;
+    border-radius: 1rem;
+    justify-content: space-between;
+    align-items: center;
+}
+.category-name h1{
+    color:rgb(239, 139, 17) ;
+    align-items: center;
+    padding: 1rem 0 1rem 2rem;
+}
+.category-name h2{
+    float: right;
+    color:rgb(44, 172, 246) ;
+    align-items: center;
+    padding-right: 2rem;
+    cursor: pointer;
+
+}
+.category{
+    /* border: 3px solid red; */
+    display:flex;
+    box-sizing: border-box;
+    justify-content: space-around;
+    flex-flow: wrap;
+    flex-direction: row;
 }
