@@ -19,7 +19,7 @@ export default function CheckoutProduct({ id, title, src, price, rating }) {
                     <div className="item-info">
                         <h4>{title}</h4>
                         <div className="product-rating">
-                            <h3>&#11088;{rating}</h3>
+                            <h3>⭐{rating}</h3>
                         </div>
                         <label>Add Qty: </label>
                         <select tabIndex={0} name='quantity'>

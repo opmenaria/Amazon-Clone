@@ -169,13 +169,22 @@ html{
   padding-bottom: 1rem; 
   justify-content: center;
 }
-.catItem{
+.catgItem{
+  text-decoration:none;
   display:flex;
-  color: rgb(247, 208, 176);
   justify-content: space-around;
   font-size:2rem;
 }
+.navbar h3:hover{
+  /* text-decoration:underline; */
+  color: #e2a705;
+}
 .navbar h3{
+  color: rgb(243, 226, 211);
   cursor: pointer;
-margin: 0 5rem;
+  margin: 0 5rem;
+}
+.catbtn{
+  text-decoration: none;
+
 }

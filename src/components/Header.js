@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { GoLocation, GoSearch } from "react-icons/go"
 import { ShoppingCart } from '@mui/icons-material'
 import '../css/Header.css';
-// import { useStateValue } from './StateProvider';
 import { auth } from '../firebase';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
@@ -47,30 +46,10 @@ export default function Header() {
         setSearchItem(res)
     }
     return (
-<<<<<<< HEAD
         <>
             <nav className="header">
                 <Link to="/">
                     <img className="nav-logo" src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="Logo"></img>
-=======
-        <nav className="header">
-            <Link to="/Amazon-Clone">
-                <img className="nav-logo" src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="Logo"></img>
-            </Link>
-            <Link className="nav-location">
-                <GoLocation /> <h5> Select Location</h5>
-            </Link>
-            <div className="search" >
-                <input className='search-input' placeholder='Search Amazon.in' type="text" />
-                <GoSearch className='search-icon' />
-            </div>
-            <div className="nav-tools">
-                <Link to={!user && "/login"} className='nav-tool-link'>
-                    <div onClick={handleLogin} className='nav-tool-link-div'>
-                        <h6 className='nav-acc-top'>Hello, {user ? `${user.email}` : "Guest"}</h6>
-                        <h5 className='nav-acc-bottom hide'>{user ? "Sign Out" : "Sign In"}</h5>
-                    </div>
->>>>>>> a37f57d265a94d2d7ba6ead296a8dcbd985f9572
                 </Link>
                 <Link className="nav-location">
                     <GoLocation /> <h3> Select Location</h3>
@@ -103,16 +82,7 @@ export default function Header() {
                         </div>
                     </Link>
                 </div>
-
             </nav>
-            <div className="navbar">
-                <div className="catItem">
-                    <h3>Jewelery</h3>
-                    <h3>Electronics</h3>
-                    <h3>Women's Clothing</h3>
-                    <h3>Men's Clothing</h3>
-                </div>
-            </div>
         </>
     )
 }

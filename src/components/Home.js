@@ -1,46 +1,36 @@
-import React, { useEffect, useState } from 'react'
 import "../css/Home.css"
 import Product from './Product'
-import axios from "axios"
-
+import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom';
 export default function Home() {
-    const [apiData, setApiData] = useState()
-    const [jewelery, setJewelery] = useState()
-    const [electronic, setElectronic] = useState()
-    const [mensFas, setMensFas] = useState()
-    const [womFas, setWomFas] = useState()
-    const fetchApi = async () => {
-        const res = await axios.get('https://fakestoreapi.com/products/?limit=8')
-        setApiData(res.data)
-    }
-
-    const jeweleryData = async () => {
-        const res = await axios.get('https://fakestoreapi.com/products/category/jewelery/?limit=8')
-        setJewelery(res.data)
-    }
-    const electronicData = async () => {
-        const res = await axios.get('https://fakestoreapi.com/products/category/electronics/?limit=4')
-        setElectronic(res.data)
-    }
-    const mensFasData = async () => {
-        const res = await axios.get(`https://fakestoreapi.com/products/category/men's clothing/?limit=4`)
-        setMensFas(res.data)
-    }
-    const womFasData = async () => {
-        const res = await axios.get(`https://fakestoreapi.com/products/category/women's clothing/?limit=4`)
-        setWomFas(res.data)
-    }
-
-    useEffect(() => {
-        fetchApi()
-        jeweleryData()
-        electronicData()
-        mensFasData()
-        womFasData()
-    }, [])
+    const apiData = useSelector(store => store.apiData)
+    const jewelery = useSelector(store => store.resJewl)
+    const electronic = useSelector(store => store.resElec)
+    const mensFas = useSelector(store => store.resMens)
+    const womFas = useSelector(store => store.resWoms)
 
     return (
         <div className="home">
+
+            <div className="navbar">
+                <div className="catgItem">
+                    <Link className='nav-tool-link' to="/allitem">
+                        <h3>See-All</h3>
+                    </Link>
+                    <Link className='nav-tool-link' to="/jewelery">
+                        <h3>Jewelery</h3>
+                    </Link>
+                    <Link className='nav-tool-link' to="/electronic">
+                        <h3>Electronics</h3>
+                    </Link>
+                    <Link className='nav-tool-link' to="/mensfas">
+                        <h3>Men's Clothing</h3>
+                    </Link>
+                    <Link className='nav-tool-link' to="/womfas">
+                        <h3>Women's Clothing</h3>
+                    </Link>
+                </div>
+            </div>
             <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
                 <div className="carousel-inner">
                     <div className="carousel-item active">
@@ -70,7 +60,9 @@ export default function Home() {
                 <div className="product-div">
                     <div className="category-name">
                         <h1>Today's Deals </h1>
-                        <h2>See More </h2>
+                        <Link to="/allitem">
+                            <h2>See More </h2>
+                        </Link>
                     </div>
                     <div className="category">
                         {
@@ -83,7 +75,9 @@ export default function Home() {
                 <div className="product-div">
                     <div className="category-name">
                         <h1>Jewelery </h1>
-                        <h2>See More </h2>
+                        <Link to="/jewelery">
+                            <h2>See More </h2>
+                        </Link>
 
                     </div>
                     <div className="category">
@@ -96,8 +90,9 @@ export default function Home() {
                 <div className="product-div">
                     <div className="category-name">
                         <h1>Electronics </h1>
-                        <h2>See More </h2>
-
+                        <Link to="/electronic">
+                            <h2>See More </h2>
+                        </Link>
                     </div>
                     <div className="category">
                         {
@@ -109,8 +104,9 @@ export default function Home() {
                 <div className="product-div">
                     <div className="category-name">
                         <h1>Men's Fashion </h1>
-                        <h2>See More </h2>
-
+                        <Link to="/mensfas">
+                            <h2>See More </h2>
+                        </Link>
                     </div>
                     <div className="category">
                         {
@@ -122,8 +118,9 @@ export default function Home() {
                 <div className="product-div">
                     <div className="category-name">
                         <h1>Women's Fashion </h1>
-                        <h2>See More </h2>
-
+                        <Link to="/womfas">
+                            <h2>See More </h2>
+                        </Link>
                     </div>
                     <div className="category">
                         {
