@@ -1,8 +1,10 @@
 Hosting URL: https://opmenaria.github.io/Amazon-Clone/
 React router html css javascript react firebase 
+<!-- EXTENSIONS -->
+<!-- sweetalert2 JS library for attractive  alerts -->
+<!-- https://alvarotrigo.com/fullPage/ a js library for animated pages and scrolls -->
 
 # Getting Started with Create React App
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

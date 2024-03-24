@@ -22,6 +22,13 @@ function App() {
   const dispatch = useDispatch()
 
   const fetchApi = async () => {
+    const apiAllData = await axios.get('https://fakestoreapi.com/products')
+    if (apiAllData) {
+      dispatch({
+        type: "FETCH_API_ALL",
+        apiAllData: apiAllData.data
+      })
+    }
     const resApi = await axios.get('https://fakestoreapi.com/products/?limit=8')
     if (resApi) {
       dispatch({

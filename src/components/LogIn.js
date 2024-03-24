@@ -14,7 +14,7 @@ export default function LogIn() {
         auth.signInWithEmailAndPassword(email, password)
             .then((auth) => {
                 if (auth) {
-                    navigate('/') //will redirect to the home page
+                    navigate('/')
                 }
             })
             .catch((e) => alert(e.message))
