@@ -8,6 +8,7 @@
 }
 #carouselExampleAutoplaying{
     /* margin-top: 1.1em !important; */
+    margin-bottom: -15%;
 }
 .carousel-item img{
     cursor: pointer;
@@ -17,7 +18,8 @@
 }
 .product-body{
     width: 96%;
-    margin: -15% auto auto auto !important;;
+    margin: 0 auto;
+    /* margin: -15% auto auto auto !important; */
 }
 .product-div{
     padding: 1rem;
