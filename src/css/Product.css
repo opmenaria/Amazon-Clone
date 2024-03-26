@@ -4,10 +4,8 @@
     box-shadow: .1rem .1rem .4rem .2rem rgb(162, 162, 162);
 }
 .product{
-    /* justify-content: space-around; */
     max-width:33rem;
     max-height:40rem;
-    /* min-width:25rem; */
     background-color: rgb(255, 255, 255);
     margin: 1rem 1rem; 
     padding: 1rem;

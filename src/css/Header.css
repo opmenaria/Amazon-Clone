@@ -7,7 +7,11 @@
     display: flex;
   }
 }
-@media (max-width:1000px) { 
+
+@media (max-width:1000px) {
+  .nav-bar{
+    display: none !important;
+  }
   .locat{
     display:  none;
   }
@@ -18,15 +22,13 @@
   .navtools{
     display: none;
   }
-}
-@media (max-width:750px) { 
   .app{
     width:100%;
 }
   
   .header{
     width:100%;
-    padding: 1rem;
+    padding: 0 !important;
     }
     .hide{
     display: none;
@@ -173,8 +175,7 @@ html{
   position: sticky; 
   display:flex;
   background: rgb(26, 26, 26);
-  height: 3rem;
-  padding-bottom: 1rem; 
+  overflow: hidden;
   justify-content: center;
 }
 .navbar h3:hover{
@@ -191,9 +192,7 @@ html{
   background: #4b4b4b;
 }
 .nav-itms{
-  /* transform: translateY(100%);
-    transition: transform 0.3s ease; */
-  padding: .3em;
+  padding: .5em .3em .2em .3em;
   display: flex;
   align-items: center;
   justify-content: space-between;
