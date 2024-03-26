@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import '../css/Login.css'
 import { auth } from '../firebase'
+import { Input } from 'antd'
+import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons'
 
 export default function LogIn() {
     const navigate = useNavigate()
@@ -34,7 +36,8 @@ export default function LogIn() {
                         <h4>Password </h4>
                         <Link className='forgot-link'> <h5>Forgot Password </h5></Link>
                     </div><br />
-                    <input value={password} onChange={e => setPassword(e.target.value)} type='password' /><br /><br />
+                    <Input.Password style={{ height: "40px", background: 'white' }} iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
+                        value={password} onChange={e => setPassword(e.target.value)} type='password' t></Input.Password>
                     <button onClick={login}><h3>Log in</h3> </button>
                     <label>
                         <input type="checkbox" />
